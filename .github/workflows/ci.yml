@@ -1,0 +1,23 @@
+name: AOS LEGO DAS Engine CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install C++20 Compiler
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y g++-11 build-essential
+    - name: Compile Native Engine
+      run: |
+        make
+    - name: Run Test Suite
+      run: |
+        make test

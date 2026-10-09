@@ -1,0 +1,15 @@
+# Compiled binaries
+bda_das_lego_engine
+test_bda
+*.o
+*.a
+*.so
+
+# Python & DBs
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.DS_Store
